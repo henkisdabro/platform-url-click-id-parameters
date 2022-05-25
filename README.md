@@ -1,4 +1,4 @@
-# Platform URL Parameter Collection
+# Platform Click ID URL Parameter Collection
 
 A living collection of url parameters from various traffic platforms (organic and paid). 
 
