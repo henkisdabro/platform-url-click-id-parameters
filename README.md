@@ -2,15 +2,11 @@
 
 A living collection of url parameters from various traffic platforms (organic and paid). 
 
-## Purpose of click ID's
+## Purpose of Click ID's
 
-Advertising and social media platforms have all incorporated the use of click ID's, which in effect are url parameters decorated (suffixed) onto any destination URL added inside the platform. These are mostly used in conjunction with the platforms' marketing tag (pixel) which is recommended to be placed on the brands' website. The tag commonly references the click id in the URL, and drops a first-party cookie in the users' browser, to be used later on for conversion attribution back on the platform itself.
+Social media (and advertising) platforms usually incorporate click ID's on outbound links, which in effect are url parameters suffixed onto any destination URL added from within the platform. The parameters are used in conjunction with the platforms' marketing tag (pixel) which they recommend to place on the brands' website. The tag commonly references the click ID and drops a first-party cookie in the users' browser with the value of the click ID parameter, which it later uses for attribution purposes.
 
-Example: a brand creates an image post with a headline, description and a landing page URL, which they post on Facebook or Instgram, leading the user to the brand's homepage. On the brand's site, they run GA4 to collect user behaviour and struggle with the native `page_location` parameter that becomes unique for evey new click from that post. Using a list similar to this, you can anticipate any incoming traffic from these platforms and build a tools or config that helps with this, such as sending a "cleaned" URL that can be used for reporting.
-
-## Use Cases
-
-A list like that can be used for URL parameter exclusion, filtering and other manipulation tasks from within tag management applications, analytics tools such as GTM, Google Analytics, GA3 and GA4. .
+Example: a brand creates a post on Facebook with a headline, description and a landing page URL, meant to encourage and lead a user to the brand's website. The brand relies on GA4 on their site to collect user behaviour and struggle with the native `page_location` dimension which is littered with hundreds of unique rows, as every pageview generated from that post arrives on the site with a unique click ID in the URL. Using a list similar to this, the brand can anticipate incoming traffic from any of these platforms (they might not always know from where traffic comes) and build a tool or configure URL manipulation on their backend (e.g. GTM, Google Analytics, GA3, GA4) that helps with this, such as sending "cleaned" URL that can be used for reporting.
 
 ## Active list | updated 25 May 2022
 
@@ -40,4 +36,8 @@ A list like that can be used for URL parameter exclusion, filtering and other ma
 
 ## Feedback and Assistance
 
-If you know of more parameters from other platforms, feel free to send in a pull request and I'll keep this list updated. It would be interesting to keep an updated `JSON` or `CSV` file within the repo as well in the future, that can be used for programmatic purposes; being able to pull an updated list in correct format directly from github (e.g. via `https://cdn.jsdelivr.net/gh/cremedigital/platform-url-click-id-parameters@main/filename.json`) into your tool (such as a GTM custom template).
+If you have experience with other parameters, from other platforms, feel free to send in a pull request to help keep this list updated. 
+
+## Plans
+- It would be interesting to keep an updated `JSON` or `CSV` file within the repo, containing comma-separated values and/or array of parameters to be used for programmatic purposes; being able to pull an updated list in correct format directly from github (e.g. via a mirrored CDN resource `https://cdn.jsdelivr.net/gh/cremedigital/platform-url-click-id-parameters@main/filename.json`) into your tool (such as a GTM custom template) could prove benefical.
+- We might consider building a GTM (Web and/or Server-side) Custom Variable Template for specific purposes. Ideas are welcome.
