@@ -8,7 +8,7 @@ Social media (and advertising) platforms usually incorporate click ID's on outbo
 
 Example: a brand creates a post on Facebook with a headline, description and a landing page URL, meant to encourage and lead a user to the brand's website. The brand relies on GA4 on their site to collect user behaviour and struggle with the native `page_location` dimension which is littered with hundreds of unique rows, as every pageview generated from that post arrives on the site with a unique click ID in the URL. Using a list similar to this, the brand can anticipate incoming traffic from any of these platforms (they might not always know from where traffic comes) and build a tool or configure URL manipulation on their backend (e.g. GTM, Google Analytics, GA3, GA4) that helps with this, such as sending "cleaned" URL that can be used for reporting.
 
-## Active list
+## Active List of Click ID's
 
 _updated 25 May 2022_
 
