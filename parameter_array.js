@@ -1,26 +1,52 @@
 [
-  'gclid',                 // Google Ads click ID - generic non-iOS
-  'gbraid',                // Google Ads click ID - iOS app to app measurement
-  'wbraid',                // Google Ads click ID - iOS app to web measurement
-  'gclsrc',                // Google Search Ads 360 click ID
-  'dclid',                 // Google Display click ID (Enhanced Attribution)
-  'fbclid',                // Meta click ID
-  'dicbo',                 // Outbrain click ID
-  'tblci',                 // Taboola click ID
-  'li_fat_id',             // Linkedin click ID
-  'rdt_cid',               // Reddit click ID
-  'ttclid',                // TikTok click ID
-  'twclid',                // Twitter click ID
-  'auctid',                // Teads click ID
-  'vmcid',                 // Yahoo DSP click ID
-  'afid',                  // Yahoo Native parameters
-  'subafid',
-  'msclkid',               // Microsoft click ID
-  'campaign',              // Microsoft campaign parameters
-  'mc_cid',                // Mailchimp click ID
-  'mc_eid',                // Mailchimp click ID
-  '_z1_agid',              // Zemanta click ID
-  '_z1_caid',              // Zemanta click ID
-  '_z1_msid',              // Zemanta click ID
-  '_z1_pub'                // Zemanta click ID
+  's_cid',                 // Adobe
+  '__s',                   // Drip
+  'gclid',                 // Google Ads - generic non-iOS
+  'gbraid',                // Google Ads - iOS app to app
+  'wbraid',                // Google Ads - iOS app to web
+  'gclsrc',                // Google Search Ads 360
+  'dclid',                 // Google Display (Enhanced Attribution)
+  'hsCtaTracking',         // Hubspot
+  '__hssc',                // Hubspot
+  '__hstc',                // Hubspot
+  '__hsfp',                // Hubspot
+  '_hsenc',                // Hubspot
+  '_hsmi',                 // Hubspot
+  'igshid',                // Instagram
+  'fbclid',                // Meta
+  'li_fat_id',             // Linkedin
+  'ICID',                  // Other
+  'rb_clickid',            // Other
+  'subafid',               // Other
+  'cvid',                  // Microsoft MSN/Bing
+  'oicd',                  // Microsoft MSN/Bing
+  'msclkid',               // Microsoft
+  'campaign',              // Microsoft
+  'mc_cid',                // Mailchimp
+  'mc_eid',                // Mailchimp
+  'ml_subscriber',         // MailerLite
+  'ml_subscriber_hash',    // MailerLite
+  'mkt_tok',               // Marketo
+  'oly_anon_id',           // Olytics
+  'oly_enc_id',            // Olytics
+  'otc',                   // Olytics
+  '_openstat',             // OpenStat
+  'dicbo',                 // Outbrain
+  'rdt_cid',               // Reddit
+  'tblci',                 // Taboola
+  'auctid',                // Teads
+  'ttclid',                // TikTok
+  'twclid',                // Twitter
+  'vero_conv',             // Vero
+  'vero_id',               // Vero
+  'wickedid',              // Wicked Reports
+  'soc_trk',               // Yahoo
+  'soc_src',               // Yahoo
+  'vmcid',                 // Yahoo DSP
+  'afid',                  // Yahoo Native
+  'yclid',                 // Yahoo/Yandex
+  '_z1_agid',              // Zemanta
+  '_z1_caid',              // Zemanta
+  '_z1_msid',              // Zemanta
+  '_z1_pub'                // Zemanta
 ]

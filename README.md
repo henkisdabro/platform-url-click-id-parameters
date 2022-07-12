@@ -8,38 +8,83 @@ Social media (and advertising) platforms usually incorporate click ID's on outbo
 
 Example: a brand creates a post on Facebook with a headline, description and a landing page URL, meant to encourage and lead a user to the brand's website. The brand relies on GA4 on their site to collect user behaviour and struggle with the native `page_location` dimension which is littered with hundreds of unique rows, as every pageview generated from that post arrives on the site with a unique click ID in the URL. Using a list similar to this, the brand can anticipate incoming traffic from any of these platforms (they might not always know from where traffic comes) and build a tool or configure URL manipulation on their backend (e.g. GTM, Google Analytics, GA3, GA4) that helps with this, such as sending "cleaned" URL that can be used for reporting.
 
-## Active List of Click ID's
+## Active Lists
 
-_updated 25 May 2022_
+### Ad/Analytics Platform URL Query Parameters (Click ID's)
 
-| Query Parameter | Description |
-| ------------- | ------------- |
-| `gclid` | Google (non-iOS devices) |
-| `gbraid`| Google (iOS 14.5+ opted out devices) (web-to-app) |
-| `wbraid`| Google (iOS 14.5+ opted out devices) (app-to-web) |
-| `dclid` | Google Display (Enhanced Attribution) |
-| `gclsrc` | Google Search Ads 360 |
-| `fbclid` | Facebook |
-| `tblci` | Taboola |
-| `li_fat_id` | Linkedin |
-| `ttclid` | TikTok |
-| `rdt_cid` | Reddit |
-| `dicbo` | Outbrain |
-| `twclid` | Twitter |
-| `auctid` | Teads |
-| `vmcid` | Yahoo DSP |
-| `msclkid` | Microsoft |
-| `mc_cid` | Mailchimp |
-| `mc_eid` | Mailchimp |
-| `_z1_agid` | Zemanta |
-| `_z1_caid` | Zemanta |
-| `_z1_msid` | Zemanta |
-| `_z1_pub` | Zemanta |
+_updated 12 July 2022_
+
+| Query Parameter       | Description                                       |
+| --------------------- | -------------                                     |
+| `s_cid`               | Adobe                                             |
+| `gclid`               | Google (non-iOS devices)                          |
+| `gbraid`              | Google (iOS 14.5+ opted out devices) (web-to-app) |
+| `wbraid`              | Google (iOS 14.5+ opted out devices) (app-to-web) |
+| `dclid`               | Google Display (Enhanced Attribution)             |
+| `gclsrc`              | Google Search Ads 360                             |
+| `igshid`              | Instagram                                         |
+| `li_fat_id`           | Linkedin                                          |
+| `fbclid`              | Meta (Facebook/Instagram/Messenger/Whatsapp)      |
+| `cvid`                | Microsoft MSN/Bing                                |
+| `oicd`                | Microsoft MSN/Bing                                |
+| `msclkid`             | Microsoft                                         |
+| `mc_cid`              | Mailchimp                                         |
+| `mc_eid`              | Mailchimp                                         |
+| `ml_subscriber`       | MailerLite                                        |
+| `ml_subscriber_hash`  | MailerLite                                        |
+| `mkt_tok`             | Marketo                                           |
+| `oly_anon_id`         | Olytics                                           |
+| `oly_enc_id`          | Olytics                                           |
+| `otc`                 | Olytics                                           |
+| `_openstat`           | OpenStat                                          |
+| `dicbo`               | Outbrain                                          |
+| `rdt_cid`             | Reddit                                            |
+| `s_cid`               | Adobe                                             |
+| `tblci`               | Taboola                                           |
+| `auctid`              | Teads                                             |
+| `ttclid`              | TikTok                                            |
+| `twclid`              | Twitter                                           |
+| `vero_conv`           | Vero                                              |
+| `vero_id`             | Vero                                              |
+| `wickedid`            | Wicked Reports                                    |
+| `vmcid`               | Yahoo DSP                                         |
+| `afid`                | Yahoo Native Params                               |
+| `soc_src`             | Yahoo                                             |
+| `soc_trk`             | Yahoo                                             |
+| `yclid`               | Yandex/Yahoo                                      |
+| `_z1_agid`            | Zemanta                                           |
+| `_z1_caid`            | Zemanta                                           |
+| `_z1_msid`            | Zemanta                                           |
+| `_z1_pub`             | Zemanta                                           |
+
+### Miscellaneous URL Query Parameters
+
+_updated 12 July 2022_
+
+| Query Parameter       | Description                                       |
+| --------------------- | -------------                                     |
+| `__s`                 | Drip                                              |
+| `hsCtaTracking`       | HubSpot                                           |
+|   `__hssc`            | Hubspot                                           |
+|  `__hstc`             | Hubspot                                           |
+|  `__hsfp`             | Hubspot                                           | 
+|  `_hsmi`              | Hubspot                                           |
+|  `_hsenc`             | Hubspot                                           |
+|  `ICID`               | Other                                             |
+| `campaign`            | Microsoft                                         |
+| `subafid`             | Other                                             |
+| `rb_clickid`          | Other                                             |
+
+## Sourcing and Inspiration
+
+[Brave Browser Known Tracker Parameters](https://www.cookiestatus.com/brave/#other)
+
+[Chrome UTM Stripper Extension](https://github.com/jparise/chrome-utm-stripper)
 
 ## Feedback and Assistance
 
-If you have experience with other parameters, from other platforms, feel free to send in a pull request to help keep this list updated. 
+If you have knowledge of other parameters, from other platforms or tools, feel free to send a pull request.
 
 ## Plans
-- It would be interesting to keep an updated `JSON` or `CSV` file within the repo, containing comma-separated values and/or array of parameters to be used for programmatic purposes; being able to pull an updated list in correct format directly from github (e.g. via a mirrored CDN resource `https://cdn.jsdelivr.net/gh/cremedigital/platform-url-click-id-parameters@main/filename.json`) into your tool (such as a GTM custom template) could prove benefical.
-- We might consider building a GTM (Web and/or Server-side) Custom Variable Template for specific purposes. Ideas are welcome.
+- Build `JSON` or `CSV` to be used programmatically; being able to pull updated lists via a mirrored CDN resource `cdn.jsdelivr.net/gh/cremedigital/platform-url-click-id-parameters@main/filename.json`) into your tool (such as a GTM custom template).
+- Build of a GTM Custom Variable Template (Web and/or Server-side)for specific purposes. Ideas are welcome.
