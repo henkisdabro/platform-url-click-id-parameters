@@ -55,6 +55,7 @@ Query Parameter       | Description
 `wbraid`              | Google (iOS 14.5+ opted out devices) (app-to-web) 
 `dclid`               | Google Display (Enhanced Attribution)
 `gclsrc`              | Google Search Ads 360
+`srsltid`             | Google Shopping Free Listings Result ID
 `igshid`              | Instagram            
 `li_fat_id`           | Linkedin             
 `fbclid`              | Meta (Facebook/Instagram/Messenger/Whatsapp)

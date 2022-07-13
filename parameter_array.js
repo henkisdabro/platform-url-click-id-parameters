@@ -6,6 +6,7 @@
   'wbraid',                // Google Ads - iOS app to web
   'gclsrc',                // Google Search Ads 360
   'dclid',                 // Google Display (Enhanced Attribution)
+  'srsltid',               // Google Shopping Free Listings Result ID
   'hsCtaTracking',         // Hubspot
   '__hssc',                // Hubspot
   '__hstc',                // Hubspot
