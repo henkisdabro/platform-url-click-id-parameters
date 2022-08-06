@@ -1,6 +1,8 @@
 [
   's_cid',                 // Adobe
   '__s',                   // Drip
+  'cid',                   // Generic & unknown platforms
+  'clickid',               // Generic & unknown platforms
   'gclid',                 // Google Ads - generic non-iOS
   'gbraid',                // Google Ads - iOS app to app
   'wbraid',                // Google Ads - iOS app to web

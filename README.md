@@ -1,6 +1,6 @@
 # Platform Click ID URL Parameter Collection
 
-A living collection of url parameters from various traffic platforms (organic and paid). 
+A living collection of url parameters from popular traffic platforms (organic and paid). Use as filters within website analytics tools, such as Google Analytics (UA & GA) and or from a tag management tool such as Google Tag Manager to clean up URL's and defragement page url/location/query reports.
 
 ## Purpose of Click ID's
 
@@ -43,13 +43,15 @@ Using a list similar to this, the brand can anticipate incoming traffic from any
 
 # Active Lists
 
-### Ad/Analytics Platform URL Query Parameters (Click ID's)
+## ✅ Marketing & Analytics URL Query Parameters (Click ID's)
 
-_updated 12 July 2022_
+_updated 6 August 2022_
 
 Query Parameter       | Description                                       
 --------------------- | ------------------------------------------------- 
-`s_cid`               | Adobe                
+`s_cid`               | Adobe
+`cid`                 | Generic & unknown platforms
+`clickid`             | Generic & unknown platforms               
 `gclid`               | Google (non-iOS devices)                          
 `gbraid`              | Google (iOS 14.5+ opted out devices) (web-to-app) 
 `wbraid`              | Google (iOS 14.5+ opted out devices) (app-to-web) 
@@ -91,7 +93,7 @@ Query Parameter       | Description
 `_z1_msid`            | Zemanta              
 `_z1_pub`             | Zemanta              
 
-### Miscellaneous URL Query Parameters
+## ❔ Miscellaneous URL Query Parameters
 
 _updated 12 July 2022_
 
@@ -107,18 +109,32 @@ Query Parameter     | Description
 `ICID`              | Other                
 `campaign`          | Microsoft            
 `subafid`           | Other                
-`rb_clickid`        | Other                
+`rb_clickid`        | Other
 
-## Sourcing and Inspiration
+## ⚠️ Proceed-with-caution URL Query Parameters
+
+Not included in the `parameter_array.js` or `parameter_commaseparated.csv` files as manual implementation is recommended.
+
+_updated 6 August 2022_
+
+Query Parameter     | Description          
+------------------- | ------------------------------------------------------------------
+`_gl`               | Google Analytics cross-domain measurement linker parameters. Can be found in GA4 `page_location` reports as rogue/stray parameters on incoming website traffic from sites with incorrectly configured cross-domain settings. Consider stripping this parameter within e.g Google Tag Manager unless you are in fact using cross-domain tracking/measurement where this parameter would be required.
+
+# Google Tag Manager Ideas
+
+There are many tag management solutions that can help with setting up website analytics tags, but Google Tag Manager is a popular option which has community-provided templates that can be used in conjunction with this list. An excellent variable template that I've used successfully is written by [@mbaersh](https://github.com/mbaersch). [URL Cleaner](https://github.com/mbaersch/url-cleaner) offers many options and can be configured to correct for many of abovementioned issues. 
+
+# Sourcing and Inspiration
 
 [Brave Browser Known Tracker Parameters](https://www.cookiestatus.com/brave/#other)
 
 [Chrome UTM Stripper Extension](https://github.com/jparise/chrome-utm-stripper)
 
-## Feedback and Assistance
+# Feedback and Assistance
 
 If you have knowledge of other parameters, from other platforms or tools, feel free to send a pull request.
 
-## Plans
+# Plans
 - Build `JSON` or `CSV` to be used programmatically; being able to pull updated lists via a mirrored CDN resource `cdn.jsdelivr.net/gh/cremedigital/platform-url-click-id-parameters@main/filename.json`) into your tool (such as a GTM custom template).
-- Build of a GTM Custom Variable Template (Web and/or Server-side)for specific purposes. Ideas are welcome.
+- Build a GTM Custom Variable Template (Web and/or Server-side)for specific purposes.
