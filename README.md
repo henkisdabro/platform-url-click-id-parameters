@@ -95,7 +95,7 @@ Query Parameter       | Description
 
 ## ❔ Miscellaneous URL Query Parameters
 
-_updated 12 July 2022_
+_updated 8 August 2022_
 
 Query Parameter     | Description          
 ------------------- | ------------------------------------------------- 
@@ -110,6 +110,7 @@ Query Parameter     | Description
 `campaign`          | Microsoft            
 `subafid`           | Other                
 `rb_clickid`        | Other
+`WT.mc_id`          | Webtrends Marketing Campaign ID
 
 ## ⚠️ Proceed-with-caution URL Query Parameters
 

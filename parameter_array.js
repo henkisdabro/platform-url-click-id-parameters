@@ -47,6 +47,7 @@
   'soc_src',               // Yahoo
   'vmcid',                 // Yahoo DSP
   'afid',                  // Yahoo Native
+  'WT.mc_id',              // Webtrends Marketing Campaign ID
   'yclid',                 // Yahoo/Yandex
   '_z1_agid',              // Zemanta
   '_z1_caid',              // Zemanta
