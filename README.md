@@ -41,101 +41,108 @@ Example: a brand creates a post on Facebook with a headline, description and a l
 
 Using a list similar to this, the brand can anticipate incoming traffic from any of these platforms (they might not always know from where traffic comes) and build a tool or configure URL manipulation on their backend (e.g. using GTM, Google Analytics, GA3, GA4) that helps with this, either by sending "clean" URL's to the analytics tools in the first page and/or using the list to manipulate or truncate incoming traffic if the tool supports it, which can then be used for reporting.
 
-# Active Lists
+## Active Lists
 
-## ✅ Marketing & Analytics URL Query Parameters (Click ID's)
+### ✅ Marketing & Analytics URL Query Parameters (Click ID's)
 
-_updated 6 August 2022_
+_updated 6 February 2023_
 
-Query Parameter       | Description                                       
---------------------- | ------------------------------------------------- 
+Query Parameter       | Description
+--------------------- | -------------------------------------------------
 `s_cid`               | Adobe
+`s_kwcid`             | Adobe
+`ad_id`               | Adroll
+`awclid`              | Amazon
 `cid`                 | Generic & unknown platforms
-`clickid`             | Generic & unknown platforms               
-`gclid`               | Google (non-iOS devices)                          
-`gbraid`              | Google (iOS 14.5+ opted out devices) (web-to-app) 
-`wbraid`              | Google (iOS 14.5+ opted out devices) (app-to-web) 
+`clickid`             | Generic & unknown platforms
+`gclid`               | Google (non-iOS devices)
+`gbraid`              | Google (iOS 14.5+ opted out devices) (web-to-app)
+`wbraid`              | Google (iOS 14.5+ opted out devices) (app-to-web)
 `dclid`               | Google Display (Enhanced Attribution)
 `gclsrc`              | Google Search Ads 360
 `srsltid`             | Google Shopping Free Listings Result ID
-`igshid`              | Instagram            
-`li_fat_id`           | Linkedin             
+`igshid`              | Instagram
+`_kx`                 | Klaviyo
+`li_fat_id`           | Linkedin
 `fbclid`              | Meta (Facebook/Instagram/Messenger/Whatsapp)
-`cvid`                | Microsoft MSN/Bing   
-`oicd`                | Microsoft MSN/Bing   
-`msclkid`             | Microsoft            
-`mc_cid`              | Mailchimp            
-`mc_eid`              | Mailchimp            
-`ml_subscriber`       | MailerLite           
-`ml_subscriber_hash`  | MailerLite           
-`mkt_tok`             | Marketo              
-`oly_anon_id`         | Olytics              
-`oly_enc_id`          | Olytics              
-`otc`                 | Olytics              
-`_openstat`           | OpenStat             
-`dicbo`               | Outbrain             
-`rdt_cid`             | Reddit               
-`s_cid`               | Adobe                
-`tblci`               | Taboola              
-`auctid`              | Teads                
-`ttclid`              | TikTok               
-`twclid`              | Twitter              
-`vero_conv`           | Vero                 
-`vero_id`             | Vero                 
-`wickedid`            | Wicked Reports       
-`vmcid`               | Yahoo DSP            
+`cvid`                | Microsoft MSN/Bing
+`oicd`                | Microsoft MSN/Bing
+`msclkid`             | Microsoft
+`ct_params`           | Mailchimp
+`mc_cid`              | Mailchimp
+`mc_eid`              | Mailchimp
+`ml_subscriber`       | MailerLite
+`ml_subscriber_hash`  | MailerLite
+`mkt_tok`             | Marketo
+`oly_anon_id`         | Olytics
+`oly_enc_id`          | Olytics
+`otc`                 | Olytics
+`_openstat`           | OpenStat
+`dicbo`               | Outbrain
+`rdt_cid`             | Reddit
+`tblci`               | Taboola
+`auctid`              | Teads
+`ttclid`              | TikTok
+`twclid`              | Twitter
+`vero_conv`           | Vero
+`vero_id`             | Vero
+`wickedid`            | Wicked Reports
+`vmcid`               | Yahoo DSP
 `afid`                | Yahoo Native Params  
-`soc_src`             | Yahoo                
-`soc_trk`             | Yahoo                
-`yclid`               | Yandex/Yahoo         
-`_z1_agid`            | Zemanta              
-`_z1_caid`            | Zemanta              
-`_z1_msid`            | Zemanta              
-`_z1_pub`             | Zemanta              
+`soc_src`             | Yahoo
+`soc_trk`             | Yahoo
+`yclid`               | Yandex/Yahoo
+`_z1_agid`            | Zemanta
+`_z1_caid`            | Zemanta
+`_z1_msid`            | Zemanta
+`_z1_pub`             | Zemanta
 
-## ❔ Miscellaneous URL Query Parameters
+### ❔ Miscellaneous URL Query Parameters
 
-_updated 8 August 2022_
+_updated 6 February 2023_
 
-Query Parameter     | Description          
-------------------- | ------------------------------------------------- 
-`__s`               | Drip                 
-`hsCtaTracking`     | HubSpot              
-`__hssc`            | Hubspot              
-`__hstc`            | Hubspot              
-`__hsfp`            | Hubspot               
-`_hsmi`             | Hubspot              
-`_hsenc`            | Hubspot              
-`ICID`              | Other                
-`campaign`          | Microsoft            
-`subafid`           | Other                
+Query Parameter     | Description
+------------------- | --------------------------------
+`eid`               | Generic
+`cid`               | Generic
+`__s`               | Drip
+`hsCtaTracking`     | HubSpot
+`__hssc`            | Hubspot
+`__hstc`            | Hubspot
+`__hsfp`            | Hubspot
+`_hsmi`             | Hubspot
+`_hsenc`            | Hubspot
+`ICID`              | Other
+`campaign`          | Microsoft
+`subafid`           | Other
 `rb_clickid`        | Other
 `WT.mc_id`          | Webtrends Marketing Campaign ID
 
-## ⚠️ Proceed-with-caution URL Query Parameters
+### ⚠️ Proceed-with-caution URL Query Parameters
 
 Not included in the `parameter_array.js` or `parameter_commaseparated.csv` files as manual implementation is recommended.
 
-_updated 6 August 2022_
+_updated 8 August 2022_
 
-Query Parameter     | Description          
+Query Parameter     | Description
 ------------------- | ------------------------------------------------------------------
 `_gl`               | Google Analytics cross-domain measurement linker parameters. Can be found in GA4 `page_location` reports as rogue/stray parameters on incoming website traffic from sites with incorrectly configured cross-domain settings. Consider stripping this parameter within e.g Google Tag Manager unless you are in fact using cross-domain tracking/measurement where this parameter would be required.
 
-# Google Tag Manager Ideas
+## Google Tag Manager Ideas
 
 There are many tag management solutions that can help with setting up website analytics tags, but Google Tag Manager is a popular option which has community-provided templates that can be used in conjunction with this list. An excellent variable template that I've used successfully is written by [@mbaersh](https://github.com/mbaersch). [URL Cleaner](https://github.com/mbaersch/url-cleaner) offers many options and can be configured to correct for many of abovementioned issues. 
 
-# Sourcing and Inspiration
+## Sourcing and Inspiration
 
 [Brave Browser Known Tracker Parameters](https://www.cookiestatus.com/brave/#other)
 
 [Chrome UTM Stripper Extension](https://github.com/jparise/chrome-utm-stripper)
 
-# Feedback and Assistance
+## Feedback and Assistance
 
 If you have knowledge of other parameters, from other platforms or tools, feel free to send a pull request.
 
-# Plans
+## Plans
+
 - Build `JSON` or `CSV` to be used programmatically; being able to pull updated lists via a mirrored CDN resource `cdn.jsdelivr.net/gh/cremedigital/platform-url-click-id-parameters@main/filename.json`) into your tool (such as a GTM custom template).
 - Build a GTM Custom Variable Template (Web and/or Server-side)for specific purposes.

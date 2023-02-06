@@ -1,5 +1,8 @@
 [
   's_cid',                 // Adobe
+  's_kwcid',               // Adobe
+  'ad_id',                 // Adroll
+  'awclid',                // Amazon
   '__s',                   // Drip
   'cid',                   // Generic & unknown platforms
   'clickid',               // Generic & unknown platforms
@@ -17,14 +20,17 @@
   '_hsmi',                 // Hubspot
   'igshid',                // Instagram
   'fbclid',                // Meta
+  '_kx',                   // Klaviyo
   'li_fat_id',             // Linkedin
   'ICID',                  // Other
   'rb_clickid',            // Other
   'subafid',               // Other
+  'mkt_tok',               // Marketo
   'cvid',                  // Microsoft MSN/Bing
   'oicd',                  // Microsoft MSN/Bing
   'msclkid',               // Microsoft
   'campaign',              // Microsoft
+  'ct_params',             // Mailchimp
   'mc_cid',                // Mailchimp
   'mc_eid',                // Mailchimp
   'ml_subscriber',         // MailerLite
@@ -36,6 +42,7 @@
   '_openstat',             // OpenStat
   'dicbo',                 // Outbrain
   'rdt_cid',               // Reddit
+  'cmp',                   // Salesforce
   'tblci',                 // Taboola
   'auctid',                // Teads
   'ttclid',                // TikTok
