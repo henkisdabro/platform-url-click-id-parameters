@@ -1,0 +1,18 @@
+name: Convert table to JSON
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  convert-table-to-json:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Convert table to JSON
+      uses: dakshshah96/table-to-json-action@v1.1
+      with:
+        input_file_path: README.md
+        output_file_path: parameter_array.json
+        table_index: 2
+        column_index: 0
