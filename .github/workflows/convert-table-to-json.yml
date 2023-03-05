@@ -8,11 +8,12 @@ jobs:
   convert-table-to-json:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Convert table to JSON
-      uses: dakshshah96/table-to-json-action@v1.1
-      with:
-        input_file_path: README.md
-        output_file_path: parameter_array.json
-        table_index: 2
-        column_index: 0
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Convert table to JSON
+        uses: thii/table-to-json@v0.3
+        with:
+          file: README.md
+          table: 1
+          columns: 1
+          json-file: parameter_array.json
