@@ -12,9 +12,6 @@
       "action"
     ],
     "author": "Your Name",
-    "license": "MIT",
-    "dependencies": {
-      "fs": "^0.0.1"
-    }
+    "license": "MIT"
   }
   
