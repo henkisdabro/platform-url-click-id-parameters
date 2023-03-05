@@ -1,0 +1,20 @@
+{
+    "name": "csv-generator",
+    "version": "1.0.0",
+    "description": "Automatically generate a CSV file from an array in a JavaScript file",
+    "main": "generate-csv.js",
+    "scripts": {
+      "test": "echo 'No tests specified'"
+    },
+    "keywords": [
+      "csv",
+      "github",
+      "action"
+    ],
+    "author": "Your Name",
+    "license": "MIT",
+    "dependencies": {
+      "fs": "^0.0.1"
+    }
+  }
+  
