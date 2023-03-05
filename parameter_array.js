@@ -59,5 +59,6 @@
   '_z1_agid',              // Zemanta
   '_z1_caid',              // Zemanta
   '_z1_msid',              // Zemanta
-  '_z1_pub'                // Zemanta
+  '_z1_pub',               // Zemanta
+  'test'
 ]
