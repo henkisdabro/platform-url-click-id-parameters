@@ -2,7 +2,7 @@ name: Convert table to JSON
 
 on:
   push:
-    branches: [ main ]
+    branches: [ add-github-actions ]
 
 jobs:
   convert-table-to-json:
