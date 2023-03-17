@@ -26,6 +26,6 @@ jobs:
           fs.writeFileSync('table-column-values.csv', values);
 
       - name: Commit and push extracted values file
-        uses: stefanzweifel/git-auto-commit-action@v4.5.2
+        uses: stefanzweifel/git-auto-commit-action@v4.16.0
         with:
           commit_message: Add extracted table colu
