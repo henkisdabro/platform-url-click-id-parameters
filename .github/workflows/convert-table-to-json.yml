@@ -3,7 +3,7 @@ name: Extract Table Column
 on:
   push:
     branches:
-      - main
+      - add-github-actions
 
 jobs:
   extract:
