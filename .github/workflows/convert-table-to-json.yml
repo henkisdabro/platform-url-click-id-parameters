@@ -1,4 +1,4 @@
-name: Extract Table Column
+name: Extract Table Column Values
 
 on:
   push:
@@ -6,22 +6,26 @@ on:
       - add-github-actions
 
 jobs:
-  extract:
+  extract_table_column_values:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Extract Table Column
-        uses: technote-space/table-extractor-action@v1.0.0
-        with:
-          file: README.md
-          table: 3
-          column: 1
-          output: output.csv
-      - name: Commit
+
+      - name: Extract Table Column Values
         run: |
-          git config --global user.name "Henrik Söderlund"
-          git config --global user.email "admin@henriksoderlund.com"
-          git add output.csv
-          git commit -m "Extracted table column"
-          git push
+          # Read the input file and extract the table column values
+          const fs = require('fs');
+          const data = fs.readFileSync('README.md', 'utf8');
+          const tableData = data.match(/\|.*\|\n(\|.*\|)\n\|.*\|/s)[1];
+          const tableRows = tableData.split('\n').filter(row => row !== '');
+          const values = tableRows.map(row => row.match(/^\|\s*([^\s|]+)/)[1]).join(',');
+
+          # Write the output file with the extracted values
+          fs.writeFileSync('table-column-values.csv', values);
+
+      - name: Commit and push extracted values file
+        uses: stefanzweifel/git-auto-commit-action@v4.5.2
+        with:
+          commit_message: Add extracted table colu
