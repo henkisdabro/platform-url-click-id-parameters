@@ -1,19 +1,27 @@
-name: Convert table to JSON
+name: Extract Table Column
 
 on:
   push:
-    branches: [ add-github-actions ]
+    branches:
+      - main
 
 jobs:
-  convert-table-to-json:
+  extract:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
-      - name: Convert table to JSON
-        uses: thii/table-to-json@v0.3
+      - name: Extract Table Column
+        uses: technote-space/table-extractor-action@v1.0.0
         with:
           file: README.md
-          table: 1
-          columns: 1
-          json-file: parameter_array.json
+          table: 3
+          column: 1
+          output: output.csv
+      - name: Commit
+        run: |
+          git config --global user.name "Henrik Söderlund"
+          git config --global user.email "admin@henriksoderlund.com"
+          git add output.csv
+          git commit -m "Extracted table column"
+          git push
