@@ -1,4 +1,4 @@
-name: Extract Table Column Values
+name: Extract Table
 
 on:
   push:
@@ -6,26 +6,21 @@ on:
       - add-github-actions
 
 jobs:
-  extract_table_column_values:
+  extract-table:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
-      - name: Extract Table Column Values
-        run: |
-          # Read the input file and extract the table column values
-          const fs = require('fs');
-          const data = fs.readFileSync('README.md', 'utf8');
-          const tableData = data.match(/\|.*\|\n(\|.*\|)\n\|.*\|/s)[1];
-          const tableRows = tableData.split('\n').filter(row => row !== '');
-          const values = tableRows.map(row => row.match(/^\|\s*([^\s|]+)/)[1]).join(',');
-
-          # Write the output file with the extracted values
-          fs.writeFileSync('table-column-values.csv', values);
-
-      - name: Commit and push extracted values file
-        uses: stefanzweifel/git-auto-commit-action@v4.16.0
+      - name: Extract table
+        uses: technote-space/markdown-table-extractor@v1.0.0
         with:
-          commit_message: Add extracted table colu
+          file-path: README.md
+          table-index: 2
+          column-index: 0
+          output-file-path: extracted-values.csv
+      - name: Commit changes
+        run: |
+          git config --global user.email "github@henriksoderlund.com"
+          git config --global user.name "HENRIK SÖDERLUND"
+          git commit -am "Extracted values from third markdown table"
+          git push
