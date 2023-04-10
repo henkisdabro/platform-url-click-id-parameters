@@ -1,52 +1,25 @@
-name: Extract values from README.md
-
+name: Extract table values
 on:
   push:
     branches:
       - add-github-actions
-
 jobs:
-  extract-values:
+  extract:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Install pandoc
+        run: sudo apt-get install pandoc
+      - name: Extract third table values
         run: |
-          python -m pip install --upgrade pip
-          pip install pandas
-
-      - name: Read and extract values from README.md
-        run: |
-          # Import pandas library
-          import pandas as pd
-          # Read the README.md file as a string
-          with open("README.md", "r") as f:
-            readme = f.read()
-          # Split the readme by table instances (lines starting with |)
-          tables = readme.split("\n|")
-          # Check if there are at least three table instances
-          if len(tables) >= 3:
-            # Get the third table instance
-            third_table = tables[2]
-            # Convert the third table to a pandas dataframe
-            df = pd.read_table(third_table, sep="|")
-            # Get the values in the first column (excluding the header and index)
-            values = df.iloc[1:, 1]
-            # Write the values to a new file named output.csv in a comma separated list
-            values.to_csv("output.csv", index=False, header=False)
-          else:
-            # Print an error message if there are less than three table instances
-            print("Error: There are less than three table instances in README.md")
-
-      - name: Commit changes
+          # Get the third table from README.md as HTML
+          pandoc README.md -t html | grep -oP '<table>.*?</table>' | sed -n '3p' > table.html
+          # Parse the HTML table and print the values as a comma-separated list
+          python -c "import pandas as pd; df = pd.read_html('table.html')[0]; print(df.to_csv(header=None, index=None))"
+          # Save the output as output.csv
+          python -c "import pandas as pd; df = pd.read_html('table.html')[0]; df.to_csv('output.csv', header=None, index=None)"
+      - name: Commit and push output.csv
         run: |
           git config --global user.email "github@henriksoderlund.com"
           git config --global user.name "HENRIK SÖDERLUND"
