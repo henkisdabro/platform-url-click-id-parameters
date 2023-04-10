@@ -28,6 +28,5 @@ jobs:
           git config --global user.email "github@henriksoderlund.com"
           git config --global user.name "HENRIK SÖDERLUND"
           git add output.csv
-          git commit -am "Extracted values from third markdown table"
-          git commit -m "Update output.csv" || exit 0
-          git push
+          git commit -m 'Add output.csv'
+          git push origin add-github-actions
