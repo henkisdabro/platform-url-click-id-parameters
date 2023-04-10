@@ -9,16 +9,20 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-      - name: Install pandoc
-        run: sudo apt-get install pandoc
       - name: Extract third table values
         run: |
-          # Get the third table from README.md as HTML
-          pandoc README.md -t html | grep -oP '<table>.*?</table>' | sed -n '3p' > table.html
-          # Parse the HTML table and print the values as a comma-separated list
-          python -c "import pandas as pd; df = pd.read_html('table.html')[0]; print(df.to_csv(header=None, index=None))"
+          # Get the third table from README.md as a string
+          table=$(awk '/^|/{c++} c==3' README.md)
+          # Remove the header row and the separators
+          table=$(echo "$table" | sed '1d;2d;$d')
+          # Replace the pipe characters with commas
+          table=$(echo "$table" | tr '|' ',')
+          # Trim the leading and trailing spaces
+          table=$(echo "$table" | sed 's/^ *//;s/ *$//')
+          # Print the table as a comma-separated list
+          echo "$table"
           # Save the output as output.csv
-          python -c "import pandas as pd; df = pd.read_html('table.html')[0]; df.to_csv('output.csv', header=None, index=None)"
+          echo "$table" > output.csv
       - name: Commit and push output.csv
         run: |
           git config --global user.email "github@henriksoderlund.com"
