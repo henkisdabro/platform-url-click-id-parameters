@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Extract all platforms parameters from README.md
         run: |
           table=$(awk -F '|' '{if (start && !end) print $2} /---start---/{start=1} /---end---/{end=1}' README.md | tail -n+4 | sed 's/`//g' | sed 's/ //g' | sed -z 's/\n/,/g;s/,$/\n/' | sed 's/..$//')
