@@ -2,14 +2,14 @@ name: Extract table values
 on:
   push:
     branches:
-      - add-github-actions
+      - main
 jobs:
   extract:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-      - name: Extract third table values
+      - name: Extract all platforms parameters from README.md
         run: |
           table=$(awk -F '|' '{if (start && !end) print $2} /---start---/{start=1} /---end---/{end=1}' README.md | tail -n+4 | sed 's/`//g' | sed 's/ //g' | sed -z 's/\n/,/g;s/,$/\n/' | sed 's/..$//')
           echo "$table"
@@ -20,5 +20,5 @@ jobs:
           git config --global user.email "github@henriksoderlund.com"
           git config --global user.name "HENRIK SÖDERLUND"
           git add parameter_list.csv
-          git commit -m 'Add parameter_list.csv'
-          git push origin add-github-actions
+          git commit -m 'Automatically generate and add parameter_list.csv from README'
+          git push origin main
