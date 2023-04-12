@@ -28,5 +28,6 @@ jobs:
         run: |
           git config --global user.email "github@henriksoderlund.com"
           git config --global user.name "HENRIK SÖDERLUND"
-          git commit -am 'Automatically generate and add parameter_list.csv from README'
+          git add parameter_list.csv
+          git commit -m 'Automatically generate and add parameter_list.csv from README'
           git push origin main
