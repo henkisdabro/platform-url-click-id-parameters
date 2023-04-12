@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Extract third table values
         run: |
-          table=$(awk -F '|' '{if (start && !end) print $2} /---start---/{start=1} /---end---/{end=1}' README.md | tail -n+4 | sed 's/`//g' | sed 's/ //g' | sed -z 's/\n/,/g;s/,$/\n/' | sed 's/..$//' README.md)
+          table=$(awk -F '|' '{if (start && !end) print $2} /---start---/{start=1} /---end---/{end=1}' README.md | tail -n+4 | sed 's/`//g' | sed 's/ //g' | sed -z 's/\n/,/g;s/,$/\n/' | sed 's/..$//')
           echo "$table"
           # Save the output as parameter_list.csv
           echo "$table" > parameter_list.csv
