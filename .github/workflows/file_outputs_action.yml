@@ -38,12 +38,12 @@ jobs:
               output_string+="'"$val"', "
           done
           output_string="${output_string%, }]"
-          echo "var parameter_array = $output_string;" > parameter_array.js
+          echo "$output_string" > parameter_array.js
       - name: Commit and push both files
         run: |
           git config --global user.email "github@henriksoderlund.com"
           git config --global user.name "HENRIK SÖDERLUND"
           git add parameter_list.csv
           git add parameter_array.js
-          git commit -m 'Automatically generate and add parameter_list.csv and parameter_array.js from README'
+          git commit -m 'Autogenerate + add parameter_list.csv and parameter_array.js'
           git push origin main

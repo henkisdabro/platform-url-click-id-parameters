@@ -118,6 +118,14 @@ The following parameters might cause unwanted behaviour and needs to be audited 
 | ------------------- | ----------- |
 | `_gl`               | Google Analytics cross-domain measurement linker parameters. Can be found in GA4 `page_location` reports as rogue/stray parameters on incoming website traffic from sites with incorrectly configured cross-domain settings. Consider stripping this parameter within e.g Google Tag Manager unless you are in fact using cross-domain tracking/measurement where this parameter would be required. |
 
+## Programmatic Access
+
+Subsidiary files autogenerate upon any commit to this repo, based off the above parameter table in this README file, which outputs into `parameter_list.csv` and `parameter_array.js` respectively. Based on usecase these always-recent files can be directly referenced from within tag templates or custom solutions via `jsdelivr` accordingly:
+
+`https://cdn.jsdelivr.net/gh/henkisdabro/platform-url-click-id-parameters@main/parameter_list.csv`
+
+`https://cdn.jsdelivr.net/gh/henkisdabro/platform-url-click-id-parameters@main/parameter_array.js`
+
 ## Google Tag Manager Ideas
 
 There are many tag management solutions that can help with managing website/app tags. Google Tag Manager has a community-provided template gallery with templates that can be used in conjunction with this list. An excellent variable template that I've used successfully is written by [@mbaersh](https://github.com/mbaersch). [URL Cleaner](https://github.com/mbaersch/url-cleaner) offers many options and can be configured to correct for many of abovementioned issues.
@@ -130,13 +138,16 @@ There are many tag management solutions that can help with managing website/app 
 
 ## Updates
 
-- `6 Mar 2023` | Consolidate parameters into a single list and start testing with github actions for auto-generation of files.
+`12/04/2023` | Release production version of github action to autogenerate csv and array files off an updated `README.md` file
+
+`06/03/2023` | Consolidate parameters into a single list and start testing with github actions for auto-generation of files.
 
 ## Feedback and Assistance
 
-If you have knowledge of other parameters, from other platforms or tools, feel free to send a pull request.
+If you have knowledge of other parameters, from other platforms or tools, feel free to raise a pull request.
 
 ## Plans
 
-- Build `JSON` or `CSV` to be used programmatically; being able to pull updated lists via a mirrored CDN resource `cdn.jsdelivr.net/gh/cremedigital/platform-url-click-id-parameters@main/filename.json`) into your tool (such as a GTM custom template).
-- Build a GTM Custom Variable Template (Web and/or Server-side)for specific purposes.
+- [ ] Build a GTM Custom Variable Template (Web and/or Server-side)for specific purposes.
+
+- [x] Auto-build `JSON` or `CSV` via Github Actions for programmatic access
