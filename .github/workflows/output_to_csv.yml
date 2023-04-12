@@ -9,6 +9,10 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+      - name: Remove existing parameter_list.csv
+        uses: JesseTG/rm@v1.0.3
+        with:
+          path: /parameter_list.csv
       - name: Extract all platforms parameters from README.md
         run: |
           table=$(awk -F '|' '{if (start && !end) print $2} /---start---/{start=1} /---end---/{end=1}' README.md | tail -n+4 | sed 's/`//g' | sed 's/ //g' | sed -z 's/\n/,/g;s/,$/\n/' | sed 's/..$//')
