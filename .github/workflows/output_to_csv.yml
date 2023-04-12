@@ -13,21 +13,37 @@ jobs:
         uses: JesseTG/rm@v1.0.3
         with:
           path: parameter_list.csv
-      - name: Commit and push parameter_list.csv
+      - name: Remove existing parameter_array.js
+        uses: JesseTG/rm@v1.0.3
+        with:
+          path: parameter_array.js
+      - name: Commit removed files
         run: |
           git config --global user.email "github@henriksoderlund.com"
           git config --global user.name "HENRIK SÖDERLUND"
-          git commit -am 'Remove previous version of parameter_list.csv'
+          git commit -am 'Remove previous version of parameters list and array files'
       - name: Extract all platforms parameters from README.md
         run: |
           table=$(awk -F '|' '{if (start && !end) print $2} /---start---/{start=1} /---end---/{end=1}' README.md | tail -n+4 | sed 's/`//g' | sed 's/ //g' | sed -z 's/\n/,/g;s/,$/\n/' | sed 's/..$//')
           echo "$table"
           # Save the output as parameter_list.csv
           echo "$table" > parameter_list.csv
-      - name: Commit and push parameter_list.csv
+      - name: Generate a parameter_arry.js file
+        run: |
+          input_list=$(cat parameter_list.csv)
+          IFS=',' read -ra input_array <<< "$input_list"
+          output_string="["
+          for val in "${input_array[@]}"
+          do
+              output_string+="'"$val"', "
+          done
+          output_string="${output_string%, }]"
+          echo "var parameter_array = $output_string;" > parameter_array.js
+      - name: Commit and push both files
         run: |
           git config --global user.email "github@henriksoderlund.com"
           git config --global user.name "HENRIK SÖDERLUND"
           git add parameter_list.csv
-          git commit -m 'Automatically generate and add parameter_list.csv from README'
+          git add parameter_array.js
+          git commit -m 'Automatically generate and add parameter_list.csv and parameter_array.js from README'
           git push origin main
