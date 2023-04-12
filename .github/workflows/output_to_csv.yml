@@ -13,6 +13,11 @@ jobs:
         uses: JesseTG/rm@v1.0.3
         with:
           path: parameter_list.csv
+      - name: Commit and push parameter_list.csv
+        run: |
+          git config --global user.email "github@henriksoderlund.com"
+          git config --global user.name "HENRIK SÖDERLUND"
+          git commit -am 'Remove previous version of parameter_list.csv'
       - name: Extract all platforms parameters from README.md
         run: |
           table=$(awk -F '|' '{if (start && !end) print $2} /---start---/{start=1} /---end---/{end=1}' README.md | tail -n+4 | sed 's/`//g' | sed 's/ //g' | sed -z 's/\n/,/g;s/,$/\n/' | sed 's/..$//')
@@ -23,6 +28,5 @@ jobs:
         run: |
           git config --global user.email "github@henriksoderlund.com"
           git config --global user.name "HENRIK SÖDERLUND"
-          git add parameter_list.csv
-          git commit -m 'Automatically generate and add parameter_list.csv from README'
+          git commit -am 'Automatically generate and add parameter_list.csv from README'
           git push origin main
