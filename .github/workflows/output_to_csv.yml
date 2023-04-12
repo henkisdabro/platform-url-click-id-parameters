@@ -1,0 +1,24 @@
+name: Extract table values
+on:
+  push:
+    branches:
+      - add-github-actions
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Extract third table values
+        run: |
+          table=$(awk -F '|' '{if (start && !end) print $2} /---start---/{start=1} /---end---/{end=1}' README.md | tail -n+4 | sed 's/`//g' | sed 's/ //g' | sed -z 's/\n/,/g;s/,$/\n/' | sed 's/..$//' README.md)
+          echo "$table"
+          # Save the output as parameter_list.csv
+          echo "$table" > parameter_list.csv
+      - name: Commit and push parameter_list.csv
+        run: |
+          git config --global user.email "github@henriksoderlund.com"
+          git config --global user.name "HENRIK SÖDERLUND"
+          git add parameter_list.csv
+          git commit -m 'Add parameter_list.csv'
+          git push origin add-github-actions
