@@ -51,6 +51,9 @@ Using a clickid parameter list as the one in this repo, the brand can anticipate
 | `s_kwcid`             | Adobe                                             |
 | `ad_id`               | Adroll                                            |
 | `awclid`              | Amazon                                            |
+| `ao_noptimize`        | Autoptimize Plugin                                |
+| `ck_subscriber_id`    | ConvertKit                                        |
+| `cn_reloaded`         | Cookie Notice Plugin                              |
 | `__s`                 | Drip                                              |
 | `cid`                 | Generic & unknown platforms                       |
 | `eid`                 | Generic & unknown platforms                       |
@@ -61,6 +64,7 @@ Using a clickid parameter list as the one in this repo, the brand can anticipate
 | `dclid`               | Google Display (Enhanced Attribution)             |
 | `gclsrc`              | Google Search Ads 360                             |
 | `srsltid`             | Google Shopping Free Listings Result ID           |
+| `usqp`                | Google Testing ID                                 |
 | `hsCtaTracking`       | HubSpot                                           |
 | `__hssc`              | Hubspot                                           |
 | `__hstc`              | Hubspot                                           |
@@ -68,6 +72,7 @@ Using a clickid parameter list as the one in this repo, the brand can anticipate
 | `_hsmi`               | Hubspot                                           |
 | `_hsenc`              | Hubspot                                           |
 | `igshid`              | Instagram                                         |
+| `_ke`                 | Klaviyo (unconfirmed)                             |
 | `_kx`                 | Klaviyo                                           |
 | `li_fat_id`           | Linkedin                                          |
 | `ct_params`           | Mailchimp                                         |
@@ -136,7 +141,11 @@ There are many tag management solutions that can help with managing website/app 
 
 [Chrome UTM Stripper Extension](https://github.com/jparise/chrome-utm-stripper)
 
+[Cloudflare Automatic Platform Optimization product cache rule list](https://developers.cloudflare.com/automatic-platform-optimization/reference/query-parameters/)
+
 ## Updates
+
+`19/04/2023` | Add parameters from Cloudflare's cache rule list
 
 `12/04/2023` | Release production version of github action to autogenerate csv and array files off an updated `README.md` file
 
