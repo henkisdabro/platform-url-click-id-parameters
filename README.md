@@ -42,7 +42,7 @@ Example: a brand creates a post on Facebook with a headline, description and a l
 
 Using a clickid parameter list as the one in this repo, the brand can anticipate incoming traffic from any of these platforms (they might not always know from where traffic comes) and build a tool or configure URL manipulation on their backend (e.g. using GTM, Google Analytics, GA3, GA4) that alleviates the fragmentation problem, either by sending "clean" URL's to the analytics tools in the first page and/or using the list to manipulate or truncate incoming traffic if the tool supports it, which can then be used for reporting.
 
-## ✅ Marketing & Analytics URL Query Parameters | _updated 6 February 2023_
+## ✅ Marketing & Analytics URL Query Parameters | _updated 19 April 2023_
 ---start---
 
 | Query Parameter       | Description                                       |
@@ -94,6 +94,7 @@ Using a clickid parameter list as the one in this repo, the brand can anticipate
 | `subafid`             | Other                                             |
 | `rb_clickid`          | Other                                             |
 | `dicbo`               | Outbrain                                          |
+| `epik`                | Pinterest                                         |
 | `rdt_cid`             | Reddit                                            |
 | `tblci`               | Taboola                                           |
 | `auctid`              | Teads                                             |
