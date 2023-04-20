@@ -9,41 +9,60 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+
       - name: Remove existing parameter_list.csv
         uses: JesseTG/rm@v1.0.3
         with:
           path: parameter_list.csv
+
       - name: Remove existing parameter_array.js
         uses: JesseTG/rm@v1.0.3
         with:
           path: parameter_array.js
+
+      #- name: Commit removed files
+      #  run: |
+      #    git config --global user.email "github@henriksoderlund.com"
+      #    git config --global user.name "HENRIK SÖDERLUND"
+      #    git commit -am 'Remove previous version of parameters list and array files'
+
       - name: Commit removed files
+        uses: actions/checkout@v3
         run: |
-          git config --global user.email "github@henriksoderlund.com"
-          git config --global user.name "HENRIK SÖDERLUND"
-          git commit -am 'Remove previous version of parameters list and array files'
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -am "Remove previous version of parameters list and array files"
+
       - name: Extract all platforms parameters from README.md
         run: |
           table=$(awk -F '|' '{if (start && !end) print $2} /---start---/{start=1} /---end---/{end=1}' README.md | tail -n+4 | sed 's/`//g' | sed 's/ //g' | sed -z 's/\n/,/g;s/,$/\n/' | sed 's/..$//')
           echo "$table"
           # Save the output as parameter_list.csv
           echo "$table" > parameter_list.csv
-      - name: Generate a parameter_arry.js file
+
+      - name: Generate a parameter_array.js file
         run: |
           input_list=$(cat parameter_list.csv)
           IFS=',' read -ra input_array <<< "$input_list"
           output_string="["
           for val in "${input_array[@]}"
           do
-              output_string+="'"$val"', "
+              output_string+="'"$val"',"
           done
           output_string="${output_string%, }]"
           echo "$output_string" > parameter_array.js
+
+      #- name: Commit and push both files
+      #  run: |
+      #    git add parameter_list.csv parameter_array.js
+      #    git commit -m 'Autogenerate parameter_list.csv and parameter_array.js'
+      #    git push origin main
+
       - name: Commit and push both files
+        uses: actions/checkout@v3
         run: |
-          git config --global user.email "github@henriksoderlund.com"
-          git config --global user.name "HENRIK SÖDERLUND"
-          git add parameter_list.csv
-          git add parameter_array.js
-          git commit -m 'Autogenerate + add parameter_list.csv and parameter_array.js'
-          git push origin main
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add parameter_list.csv parameter_array.js
+          git commit -m "Autogenerate parameter_list.csv and parameter_array.js"
+          git push
