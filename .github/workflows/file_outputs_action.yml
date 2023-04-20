@@ -27,7 +27,6 @@ jobs:
       #    git commit -am 'Remove previous version of parameters list and array files'
 
       - name: Commit removed files
-        uses: actions/checkout@v3
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
@@ -59,7 +58,6 @@ jobs:
       #    git push origin main
 
       - name: Commit and push both files
-        uses: actions/checkout@v3
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
