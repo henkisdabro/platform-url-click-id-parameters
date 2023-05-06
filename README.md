@@ -47,6 +47,7 @@ Using a clickid parameter list as the one in this repo, the brand can anticipate
 | Query Parameter       | Description                                       |
 | --------------------- | ------------------------------------------------- |
 | `s_cid`               | Adobe                                             |
+| `ef_id`               | Adobe                                             |
 | `s_kwcid`             | Adobe                                             |
 | `ad_id`               | Adroll                                            |
 | `awclid`              | Amazon                                            |
@@ -81,6 +82,7 @@ Using a clickid parameter list as the one in this repo, the brand can anticipate
 | `oly_anon_id`         | Olytics                                           |
 | `oly_enc_id`          | Olytics                                           |
 | `otc`                 | Olytics                                           |
+| `omnisendContactID`   | Omnisend                                          |
 | `_openstat`           | OpenStat                                          |
 | `ICID`                | Other                                             |
 | `subafid`             | Other                                             |
@@ -117,10 +119,12 @@ The following parameters are required by GA4 to identify the traffic source (for
 | `gclid`               | Google (non-iOS devices)                          |
 | `gbraid`              | Google (iOS 14.5+ opted out devices) (web-to-app) |
 | `wbraid`              | Google (iOS 14.5+ opted out devices) (app-to-web) |
+| `gtm_debug`           | Google Tag Manager Preview Mode                   |
 | `dclid`               | Google Display (Enhanced Attribution)             |
 | `gclsrc`              | Google Search Ads 360                             |
 | `srsltid`             | Google Shopping Free Listings Result ID           |
 | `usqp`                | Google Testing ID                                 |
+| `_ga`                 | Google Analytics                              |
 | `_gl`                 | Google Analytics cross-domain measurement linker parameters. Can be found in GA4 `page_location` reports as rogue/stray parameters on incoming website traffic from sites with incorrectly configured cross-domain settings. Consider stripping this parameter within e.g Google Tag Manager unless you are in fact using cross-domain tracking/measurement where this parameter would be required. |
 
 ## 🤖 Programmatic Access
