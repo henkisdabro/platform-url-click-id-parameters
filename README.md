@@ -124,7 +124,7 @@ The following parameters are required by GA4 to identify the traffic source (for
 | `gclsrc`              | Google Search Ads 360                             |
 | `srsltid`             | Google Shopping Free Listings Result ID           |
 | `usqp`                | Google Testing ID                                 |
-| `_ga`                 | Google Analytics                              |
+| `_ga`                 | Google Analytics                                  |
 | `_gl`                 | Google Analytics cross-domain measurement linker parameters. Can be found in GA4 `page_location` reports as rogue/stray parameters on incoming website traffic from sites with incorrectly configured cross-domain settings. Consider stripping this parameter within e.g Google Tag Manager unless you are in fact using cross-domain tracking/measurement where this parameter would be required. |
 
 ## 🤖 Programmatic Access
