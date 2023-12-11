@@ -41,7 +41,7 @@ Example: a brand creates a post on Facebook with a headline, description and a l
 
 Using a clickid parameter list as the one in this repo, the brand can anticipate incoming traffic from any of these platforms (they might not always know from where traffic comes) and build a tool or configure URL manipulation on their backend (e.g. using GTM, Google Analytics, GA3, GA4) that alleviates the fragmentation problem, either by sending "clean" URL's to the analytics tools in the first page and/or using the list to manipulate or truncate incoming traffic if the tool supports it, which can then be used for reporting.
 
-## 📃 Marketing & Analytics URL Query Parameters | _updated 6 May 2023_
+## 📃 Marketing & Analytics URL Query Parameters | _updated 11 Dec 2023_
 ---start---
 
 | Query Parameter       | Description                                       |
@@ -49,6 +49,8 @@ Using a clickid parameter list as the one in this repo, the brand can anticipate
 | `s_cid`               | Adobe                                             |
 | `ef_id`               | Adobe                                             |
 | `s_kwcid`             | Adobe                                             |
+| `adobe_mc_sdid`       | Adobe Target (A4T)                                |
+| `adobe_mc_ref`        | Adobe Target (A4T)                                |
 | `ad_id`               | Adroll                                            |
 | `awclid`              | Amazon                                            |
 | `ao_noptimize`        | Autoptimize Plugin                                |
@@ -148,6 +150,8 @@ Google Tag Manager has a community-provided template gallery with templates that
 [Cloudflare Automatic Platform Optimization product cache rule list](https://developers.cloudflare.com/automatic-platform-optimization/reference/query-parameters/)
 
 ## 🔂 Updates
+
+`11/12/2023` | Add Adobe Target (A4T) parameters to main list
 
 `06/05/2023` | Split out Google parameters from the main list and add caveat to README
 
