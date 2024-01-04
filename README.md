@@ -41,11 +41,13 @@ Example: a brand creates a post on Facebook with a headline, description and a l
 
 Using a clickid parameter list as the one in this repo, the brand can anticipate incoming traffic from any of these platforms (they might not always know from where traffic comes) and build a tool or configure URL manipulation on their backend (e.g. using GTM, Google Analytics, GA3, GA4) that alleviates the fragmentation problem, either by sending "clean" URL's to the analytics tools in the first page and/or using the list to manipulate or truncate incoming traffic if the tool supports it, which can then be used for reporting.
 
-## 📃 Marketing & Analytics URL Query Parameters | _updated 11 Dec 2023_
+## 📃 Marketing & Analytics URL Query Parameters | _updated 4 Jan 2024
+
 ---start---
 
 | Query Parameter       | Description                                       |
 | --------------------- | ------------------------------------------------- |
+| `vgo_ee`              | ActiveCampaign                                    |
 | `s_cid`               | Adobe                                             |
 | `ef_id`               | Adobe                                             |
 | `s_kwcid`             | Adobe                                             |
@@ -54,18 +56,32 @@ Using a clickid parameter list as the one in this repo, the brand can anticipate
 | `ad_id`               | Adroll                                            |
 | `awclid`              | Amazon                                            |
 | `ao_noptimize`        | Autoptimize Plugin                                |
+| `bsft_uid`            | Blueshift                                         |
+| `bsft_clkid`          | Blueshift                                         |
 | `ck_subscriber_id`    | ConvertKit                                        |
 | `cn_reloaded`         | Cookie Notice Plugin                              |
+| `oft_id`              | Dialog Insight                                    |
+| `oft_k`               | Dialog Insight                                    |
+| `oft_lk`              | Dialog Insight                                    |
+| `oft_d`               | Dialog Insight                                    |
+| `oft_c`               | Dialog Insight                                    |
+| `oft_ck`              | Dialog Insight                                    |
+| `oft_campaign`        | Dialog Insight                                    |
+| `oft_ids`             | Dialog Insight                                    |
+| `oft_sk`              | Dialog Insight                                    |
 | `__s`                 | Drip                                              |
 | `cid`                 | Generic & unknown platforms                       |
 | `eid`                 | Generic & unknown platforms                       |
 | `clickid`             | Generic & unknown platforms                       |
+| `h_sid`               | Hive Email                                        |
+| `h_slt`               | Hive Email                                        |
 | `hsCtaTracking`       | HubSpot                                           |
 | `__hssc`              | Hubspot                                           |
 | `__hstc`              | Hubspot                                           |
 | `__hsfp`              | Hubspot                                           |
 | `_hsmi`               | Hubspot                                           |
 | `_hsenc`              | Hubspot                                           |
+| `igsh`                | Instagram                                         |
 | `igshid`              | Instagram                                         |
 | `_ke`                 | Klaviyo (unconfirmed)                             |
 | `_kx`                 | Klaviyo                                           |
@@ -77,6 +93,10 @@ Using a clickid parameter list as the one in this repo, the brand can anticipate
 | `ml_subscriber_hash`  | MailerLite                                        |
 | `mkt_tok`             | Marketo                                           |
 | `fbclid`              | Meta (Facebook/Instagram/Messenger/Whatsapp)      |
+| `fb_action_ids`       | Meta                                              |
+| `fb_action_types`     | Meta                                              |
+| `fb_source`           | Meta                                              |
+| `fb_ref`              | Meta                                              |
 | `cvid`                | Microsoft MSN/Bing                                |
 | `oicd`                | Microsoft MSN/Bing                                |
 | `campaign`            | Microsoft                                         |
@@ -92,10 +112,14 @@ Using a clickid parameter list as the one in this repo, the brand can anticipate
 | `dicbo`               | Outbrain                                          |
 | `epik`                | Pinterest                                         |
 | `rdt_cid`             | Reddit                                            |
+| `ss_email_id`         | Squarespace Newsletter                            |
 | `tblci`               | Taboola                                           |
 | `auctid`              | Teads                                             |
 | `ttclid`              | TikTok                                            |
 | `twclid`              | Twitter                                           |
+| `ref_src`             | Twitter, X                                        |
+| `ref_url`             | Twitter, X                                        |
+| `unicorn_click_id`    | Unicorn Media                                     |
 | `vero_conv`           | Vero                                              |
 | `vero_id`             | Vero                                              |
 | `WT.mc_id`            | Webtrends Marketing Campaign ID                   |
@@ -104,7 +128,12 @@ Using a clickid parameter list as the one in this repo, the brand can anticipate
 | `afid`                | Yahoo Native Params                               |
 | `soc_src`             | Yahoo                                             |
 | `soc_trk`             | Yahoo                                             |
+| `guce_referrer`       | Yahoo                                             |
+| `guce_referrer_sig`   | Yahoo                                             |
 | `yclid`               | Yandex/Yahoo                                      |
+| `ymclid`              | Yandex                                            |
+| `ysclid`              | Yandex                                            |
+| `si`                  | Youtube                                           |
 | `_z1_agid`            | Zemanta                                           |
 | `_z1_caid`            | Zemanta                                           |
 | `_z1_msid`            | Zemanta                                           |
@@ -143,6 +172,8 @@ Google Tag Manager has a community-provided template gallery with templates that
 
 ## 🙏 Sourcing and Inspiration
 
+[Brave Browser Detailed Trackers](https://github.com/brave/brave-core/blob/master/components/query_filter/utils.cc)
+
 [Brave Browser Known Tracker Parameters](https://www.cookiestatus.com/brave/#other)
 
 [Chrome UTM Stripper Extension](https://github.com/jparise/chrome-utm-stripper)
@@ -150,6 +181,8 @@ Google Tag Manager has a community-provided template gallery with templates that
 [Cloudflare Automatic Platform Optimization product cache rule list](https://developers.cloudflare.com/automatic-platform-optimization/reference/query-parameters/)
 
 ## 🔂 Updates
+
+`04/01/2024` | Add parameters for Blueshift, Dialog Insight, Unicorn Media, Twitter, Youtube, Facebook, Instagram, Yandex, Hive, Squarespace
 
 `11/12/2023` | Add Adobe Target (A4T) parameters to main list
 
