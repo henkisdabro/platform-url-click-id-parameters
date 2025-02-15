@@ -41,103 +41,116 @@ Example: a brand creates a post on Facebook with a headline, description and a l
 
 Using a clickid parameter list as the one in this repo, the brand can anticipate incoming traffic from any of these platforms (they might not always know from where traffic comes) and build a tool or configure URL manipulation on their backend (e.g. using GTM, Google Analytics, GA3, GA4) that alleviates the fragmentation problem, either by sending "clean" URL's to the analytics tools in the first page and/or using the list to manipulate or truncate incoming traffic if the tool supports it, which can then be used for reporting.
 
-## 📃 Marketing & Analytics URL Query Parameters | _updated 4 Jan 2024
+## 📃 Marketing & Analytics URL Query Parameters | _updated 15 Feb 2025
 
 ---start---
 
 | Query Parameter       | Description                                       |
 | --------------------- | ------------------------------------------------- |
-| `vgo_ee`              | ActiveCampaign                                    |
-| `s_cid`               | Adobe                                             |
-| `ef_id`               | Adobe                                             |
-| `s_kwcid`             | Adobe                                             |
-| `adobe_mc_sdid`       | Adobe Target (A4T)                                |
-| `adobe_mc_ref`        | Adobe Target (A4T)                                |
-| `ad_id`               | Adroll                                            |
-| `awclid`              | Amazon                                            |
-| `ao_noptimize`        | Autoptimize Plugin                                |
-| `bsft_uid`            | Blueshift                                         |
-| `bsft_clkid`          | Blueshift                                         |
-| `ck_subscriber_id`    | ConvertKit                                        |
-| `cn_reloaded`         | Cookie Notice Plugin                              |
-| `oft_id`              | Dialog Insight                                    |
-| `oft_k`               | Dialog Insight                                    |
-| `oft_lk`              | Dialog Insight                                    |
-| `oft_d`               | Dialog Insight                                    |
-| `oft_c`               | Dialog Insight                                    |
-| `oft_ck`              | Dialog Insight                                    |
-| `oft_campaign`        | Dialog Insight                                    |
-| `oft_ids`             | Dialog Insight                                    |
-| `oft_sk`              | Dialog Insight                                    |
-| `__s`                 | Drip                                              |
-| `cid`                 | Generic & unknown platforms                       |
-| `eid`                 | Generic & unknown platforms                       |
-| `clickid`             | Generic & unknown platforms                       |
-| `h_sid`               | Hive Email                                        |
-| `h_slt`               | Hive Email                                        |
-| `hsCtaTracking`       | HubSpot                                           |
+| `__hsfp`              | Hubspot                                           |
 | `__hssc`              | Hubspot                                           |
 | `__hstc`              | Hubspot                                           |
-| `__hsfp`              | Hubspot                                           |
-| `_hsmi`               | Hubspot                                           |
+| `__s`                 | Drip                                              |
+| `_bhlid`              | Beehiiv                                           |
+| `_branch_match_id`    | Branch.io                                         |
+| `_branch_referrer`    | Branch.io                                         |
 | `_hsenc`              | Hubspot                                           |
-| `igsh`                | Instagram                                         |
-| `igshid`              | Instagram                                         |
+| `_hsmi`               | Hubspot                                           |
 | `_ke`                 | Klaviyo (unconfirmed)                             |
 | `_kx`                 | Klaviyo                                           |
-| `li_fat_id`           | Linkedin                                          |
-| `ct_params`           | Mailchimp                                         |
-| `mc_cid`              | Mailchimp                                         |
-| `mc_eid`              | Mailchimp                                         |
-| `ml_subscriber`       | MailerLite                                        |
-| `ml_subscriber_hash`  | MailerLite                                        |
-| `mkt_tok`             | Marketo                                           |
-| `fbclid`              | Meta (Facebook/Instagram/Messenger/Whatsapp)      |
-| `fb_action_ids`       | Meta                                              |
-| `fb_action_types`     | Meta                                              |
-| `fb_source`           | Meta                                              |
-| `fb_ref`              | Meta                                              |
-| `cvid`                | Microsoft MSN/Bing                                |
-| `oicd`                | Microsoft MSN/Bing                                |
-| `campaign`            | Microsoft                                         |
-| `msclkid`             | Microsoft                                         |
-| `oly_anon_id`         | Olytics                                           |
-| `oly_enc_id`          | Olytics                                           |
-| `otc`                 | Olytics                                           |
-| `omnisendContactID`   | Omnisend                                          |
 | `_openstat`           | OpenStat                                          |
-| `ICID`                | Other                                             |
-| `subafid`             | Other                                             |
-| `rb_clickid`          | Other                                             |
-| `dicbo`               | Outbrain                                          |
-| `epik`                | Pinterest                                         |
-| `rdt_cid`             | Reddit                                            |
-| `ss_email_id`         | Squarespace Newsletter                            |
-| `tblci`               | Taboola                                           |
-| `auctid`              | Teads                                             |
-| `ttclid`              | TikTok                                            |
-| `twclid`              | Twitter                                           |
-| `ref_src`             | Twitter, X                                        |
-| `ref_url`             | Twitter, X                                        |
-| `unicorn_click_id`    | Unicorn Media                                     |
-| `vero_conv`           | Vero                                              |
-| `vero_id`             | Vero                                              |
-| `WT.mc_id`            | Webtrends Marketing Campaign ID                   |
-| `wickedid`            | Wicked Reports                                    |
-| `vmcid`               | Yahoo DSP                                         |
-| `afid`                | Yahoo Native Params                               |
-| `soc_src`             | Yahoo                                             |
-| `soc_trk`             | Yahoo                                             |
-| `guce_referrer`       | Yahoo                                             |
-| `guce_referrer_sig`   | Yahoo                                             |
-| `yclid`               | Yandex/Yahoo                                      |
-| `ymclid`              | Yandex                                            |
-| `ysclid`              | Yandex                                            |
-| `si`                  | Youtube                                           |
 | `_z1_agid`            | Zemanta                                           |
 | `_z1_caid`            | Zemanta                                           |
 | `_z1_msid`            | Zemanta                                           |
 | `_z1_pub`             | Zemanta                                           |
+| `ad_id`               | Adroll                                            |
+| `adobe_mc_ref`        | Adobe Target (A4T)                                |
+| `adobe_mc_sdid`       | Adobe Target (A4T)                                |
+| `afid`                | Yahoo Native Params                               |
+| `ao_noptimize`        | Autoptimize Plugin                                |
+| `at_recipient_id`     | Acoustic (IBM Watson Campaign Automation)         |
+| `at_recipient_list`   | Acoustic (IBM Watson Campaign Automation)         |
+| `auctid`              | Teads                                             |
+| `awclid`              | Amazon                                            |
+| `bbeml`               | Beehiiv                                           |
+| `bsft_clkid`          | Blueshift                                         |
+| `bsft_uid`            | Blueshift                                         |
+| `campaign`            | Microsoft                                         |
+| `cid`                 | Generic & unknown platforms                       |
+| `ck_subscriber_id`    | ConvertKit                                        |
+| `clickid`             | Generic & unknown platforms                       |
+| `cn_reloaded`         | Cookie Notice Plugin                              |
+| `ct_params`           | Mailchimp                                         |
+| `cvid`                | Microsoft MSN/Bing                                |
+| `dicbo`               | Outbrain                                          |
+| `ef_id`               | Adobe                                             |
+| `eid`                 | Generic & unknown platforms                       |
+| `epik`                | Pinterest                                         |
+| `et_rid`              | Exact Target                                      |
+| `fb_action_ids`       | Meta                                              |
+| `fb_action_types`     | Meta                                              |
+| `fb_ref`              | Meta                                              |
+| `fb_source`           | Meta                                              |
+| `fbclid`              | Meta (Facebook/Instagram/Messenger/Whatsapp)      |
+| `guce_referrer_sig`   | Yahoo                                             |
+| `guce_referrer`       | Yahoo                                             |
+| `h_sid`               | Hive Email                                        |
+| `h_slt`               | Hive Email                                        |
+| `hsCtaTracking`       | HubSpot                                           |
+| `ICID`                | Other                                             |
+| `igsh`                | Instagram                                         |
+| `igshid`              | Instagram                                         |
+| `irclickid`           | Impact Radius                                     |
+| `li_fat_id`           | Linkedin                                          |
+| `mc_cid`              | Mailchimp                                         |
+| `mc_eid`              | Mailchimp                                         |
+| `mkt_tok`             | Marketo                                           |
+| `ml_subscriber_hash`  | MailerLite                                        |
+| `ml_subscriber`       | MailerLite                                        |
+| `msclkid`             | Microsoft                                         |
+| `mtm_cid`             | Matomo                                            |
+| `oft_c`               | Dialog Insight                                    |
+| `oft_campaign`        | Dialog Insight                                    |
+| `oft_ck`              | Dialog Insight                                    |
+| `oft_d`               | Dialog Insight                                    |
+| `oft_id`              | Dialog Insight                                    |
+| `oft_ids`             | Dialog Insight                                    |
+| `oft_k`               | Dialog Insight                                    |
+| `oft_lk`              | Dialog Insight                                    |
+| `oft_sk`              | Dialog Insight                                    |
+| `oicd`                | Microsoft MSN/Bing                                |
+| `oly_anon_id`         | Olytics                                           |
+| `oly_enc_id`          | Olytics                                           |
+| `omnisendContactID`   | Omnisend                                          |
+| `otc`                 | Olytics                                           |
+| `pk_cid`              | Piwik                                             |
+| `rb_clickid`          | Other                                             |
+| `rdt_cid`             | Reddit                                            |
+| `ref_src`             | Twitter, X                                        |
+| `ref_url`             | Twitter, X                                        |
+| `s_cid`               | Adobe                                             |
+| `s_kwcid`             | Adobe                                             |
+| `sc_customer`         | Sendcloud                                         |
+| `sc_eh`               | Sendcloud                                         |
+| `sc_uid`              | Sendcloud                                         |
+| `si`                  | Youtube                                           |
+| `soc_src`             | Yahoo                                             |
+| `soc_trk`             | Yahoo                                             |
+| `ss_email_id`         | Squarespace Newsletter                            |
+| `subafid`             | Other                                             |
+| `tblci`               | Taboola                                           |
+| `ttclid`              | TikTok                                            |
+| `twclid`              | Twitter                                           |
+| `unicorn_click_id`    | Unicorn Media                                     |
+| `vero_conv`           | Vero                                              |
+| `vero_id`             | Vero                                              |
+| `vgo_ee`              | ActiveCampaign                                    |
+| `vmcid`               | Yahoo DSP                                         |
+| `wickedid`            | Wicked Reports                                    |
+| `WT.mc_id`            | Webtrends Marketing Campaign ID                   |
+| `yclid`               | Yandex/Yahoo                                      |
+| `ymclid`              | Yandex                                            |
+| `ysclid`              | Yandex                                            | 
 
 ---end---
 
@@ -147,16 +160,16 @@ The following parameters are required by GA4 to identify the traffic source (for
 
 | Query Parameter       | Description                                       |
 | --------------------- | ------------------------------------------------- |
-| `gclid`               | Google (non-iOS devices)                          |
-| `gbraid`              | Google (iOS 14.5+ opted out devices) (web-to-app) |
-| `wbraid`              | Google (iOS 14.5+ opted out devices) (app-to-web) |
-| `gtm_debug`           | Google Tag Manager Preview Mode                   |
-| `dclid`               | Google Display (Enhanced Attribution)             |
-| `gclsrc`              | Google Search Ads 360                             |
-| `srsltid`             | Google Shopping Free Listings Result ID           |
-| `usqp`                | Google Testing ID                                 |
 | `_ga`                 | Google Analytics                                  |
 | `_gl`                 | Google Analytics cross-domain measurement linker parameters. Can be found in GA4 `page_location` reports as rogue/stray parameters on incoming website traffic from sites with incorrectly configured cross-domain settings. Consider stripping this parameter within e.g Google Tag Manager unless you are in fact using cross-domain tracking/measurement where this parameter would be required. |
+| `dclid`               | Google Display (Enhanced Attribution)             |
+| `gbraid`              | Google (iOS 14.5+ opted out devices) (web-to-app) |
+| `gclid`               | Google (non-iOS devices)                          |
+| `gclsrc`              | Google Search Ads 360                             |
+| `gtm_debug`           | Google Tag Manager Preview Mode                   |
+| `srsltid`             | Google Shopping Free Listings Result ID           |
+| `usqp`                | Google Testing ID                                 |
+| `wbraid`              | Google (iOS 14.5+ opted out devices) (app-to-web) |
 
 ## 🤖 Programmatic Access
 
@@ -181,6 +194,8 @@ Google Tag Manager has a community-provided template gallery with templates that
 [Cloudflare Automatic Platform Optimization product cache rule list](https://developers.cloudflare.com/automatic-platform-optimization/reference/query-parameters/)
 
 ## 🔂 Updates
+
+`15/02/2025` | Add parameters for Acoustic, Beehiiv, Exact Target, Branch.io, Impact Radius, Matomo, Piwik, Sendcloud and reorder the list alphabetically
 
 `04/01/2024` | Add parameters for Blueshift, Dialog Insight, Unicorn Media, Twitter, Youtube, Facebook, Instagram, Yandex, Hive, Squarespace
 
