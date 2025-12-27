@@ -41,7 +41,7 @@ Example: a brand creates a post on Facebook with a headline, description and a l
 
 Using a clickid parameter list as the one in this repo, the brand can anticipate incoming traffic from any of these platforms (they might not always know from where traffic comes) and build a tool or configure URL manipulation on their backend (e.g. using GTM, Google Analytics, GA3, GA4) that alleviates the fragmentation problem, either by sending "clean" URL's to the analytics tools in the first page and/or using the list to manipulate or truncate incoming traffic if the tool supports it, which can then be used for reporting.
 
-## 📃 Marketing & Analytics URL Query Parameters | _updated 15 Feb 2025
+## 📃 Marketing & Analytics URL Query Parameters | _updated 27 Dec 2025
 
 ---start---
 
@@ -58,7 +58,7 @@ Using a clickid parameter list as the one in this repo, the brand can anticipate
 | `_hsmi`               | Hubspot                                           |
 | `_ke`                 | Klaviyo (unconfirmed)                             |
 | `_kx`                 | Klaviyo                                           |
-| `_openstat`           | OpenStat                                          |
+| `_openstat`           | Yandex                                            |
 | `_z1_agid`            | Zemanta                                           |
 | `_z1_caid`            | Zemanta                                           |
 | `_z1_msid`            | Zemanta                                           |
@@ -77,6 +77,8 @@ Using a clickid parameter list as the one in this repo, the brand can anticipate
 | `bsft_uid`            | Blueshift                                         |
 | `campaign`            | Microsoft                                         |
 | `cid`                 | Generic & unknown platforms                       |
+| `cjdata`              | Commission Junction	                              |
+| `cjevent`             | Commission Junction	                              |
 | `ck_subscriber_id`    | ConvertKit                                        |
 | `clickid`             | Generic & unknown platforms                       |
 | `cn_reloaded`         | Cookie Notice Plugin                              |
@@ -92,6 +94,7 @@ Using a clickid parameter list as the one in this repo, the brand can anticipate
 | `fb_ref`              | Meta                                              |
 | `fb_source`           | Meta                                              |
 | `fbclid`              | Meta (Facebook/Instagram/Messenger/Whatsapp)      |
+| `gci`                 | GLAMI                                             |
 | `guce_referrer_sig`   | Yahoo                                             |
 | `guce_referrer`       | Yahoo                                             |
 | `h_sid`               | Hive Email                                        |
@@ -104,7 +107,7 @@ Using a clickid parameter list as the one in this repo, the brand can anticipate
 | `li_fat_id`           | Linkedin                                          |
 | `mc_cid`              | Mailchimp                                         |
 | `mc_eid`              | Mailchimp                                         |
-| `mkt_tok`             | Marketo                                           |
+| `mkt_tok`             | Adobe Marketo                                     |
 | `ml_subscriber_hash`  | MailerLite                                        |
 | `ml_subscriber`       | MailerLite                                        |
 | `msclkid`             | Microsoft                                         |
@@ -119,26 +122,30 @@ Using a clickid parameter list as the one in this repo, the brand can anticipate
 | `oft_lk`              | Dialog Insight                                    |
 | `oft_sk`              | Dialog Insight                                    |
 | `oicd`                | Microsoft MSN/Bing                                |
-| `oly_anon_id`         | Olytics                                           |
-| `oly_enc_id`          | Olytics                                           |
+| `oly_anon_id`         | Omeda                                             |
+| `oly_enc_id`          | Omeda                                             |
 | `omnisendContactID`   | Omnisend                                          |
 | `otc`                 | Olytics                                           |
 | `pk_cid`              | Piwik                                             |
+| `qclid`               | Quora                                             |
 | `rb_clickid`          | Other                                             |
 | `rdt_cid`             | Reddit                                            |
 | `ref_src`             | Twitter, X                                        |
 | `ref_url`             | Twitter, X                                        |
-| `s_cid`               | Adobe                                             |
-| `s_kwcid`             | Adobe                                             |
+| `s_cid`               | Adobe SiteCatalyst                                |
+| `s_kwcid`             | Adobe AMO ID                                      |
 | `sc_customer`         | Sendcloud                                         |
 | `sc_eh`               | Sendcloud                                         |
 | `sc_uid`              | Sendcloud                                         |
+| `ScCid`               | Snapchat                                          |
 | `si`                  | Youtube                                           |
 | `soc_src`             | Yahoo                                             |
 | `soc_trk`             | Yahoo                                             |
 | `ss_email_id`         | Squarespace Newsletter                            |
+| `ShareASale`          | ShareASale                                        |
 | `subafid`             | Other                                             |
 | `tblci`               | Taboola                                           |
+| `tduid`               | TradeDoubler                                      |
 | `ttclid`              | TikTok                                            |
 | `twclid`              | Twitter                                           |
 | `unicorn_click_id`    | Unicorn Media                                     |
@@ -195,6 +202,8 @@ Google Tag Manager has a community-provided template gallery with templates that
 
 ## 🔂 Updates
 
+`27/12/2025` | Add parameters for GLAMI, Tradedoubler, Quora, Commision Junction, ShareASale, and update definitions
+
 `15/02/2025` | Add parameters for Acoustic, Beehiiv, Exact Target, Branch.io, Impact Radius, Matomo, Piwik, Sendcloud and reorder the list alphabetically
 
 `04/01/2024` | Add parameters for Blueshift, Dialog Insight, Unicorn Media, Twitter, Youtube, Facebook, Instagram, Yandex, Hive, Squarespace
@@ -216,5 +225,3 @@ If you have knowledge of other parameters, from other platforms or tools, feel f
 ## 🎯 Plans
 
 - [ ] Build a GTM Custom Variable Template (Web and/or Server-side)for specific purposes.
-
-- [x] Auto-build `JSON` or `CSV` via Github Actions for programmatic access
